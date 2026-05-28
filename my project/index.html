@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>流浪動物森林之家</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Noto Sans TC",sans-serif;
+}
+
+:root{
+    --primary:#7b0000;
+    --secondary:#fff4de;
+    --accent:#ffd27d;
+    --dark:#1f1f1f;
+    --gray:#666;
+    --light:#fafafa;
+    --white:#fff;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--light);
+    color:#333;
+    line-height:1.8;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+section{
+    padding:110px 10%;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 9%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(10px);
+
+    z-index:999;
+}
+
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:28px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--accent);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.45)),
+    url("images/307511659_479709087524548_6460439239543438505_n.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:68px;
+    line-height:1.2;
+    font-weight:900;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:20px;
+    opacity:.92;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:16px 38px;
+
+    background:var(--accent);
+    color:#222;
+
+    border-radius:60px;
+
+    font-weight:700;
+    text-decoration:none;
+
+    transition:.35s;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.2);
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    background:white;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.title h2{
+    font-size:42px;
+    color:var(--primary);
+    margin-bottom:12px;
+}
+
+.title p{
+    color:var(--gray);
+    max-width:700px;
+    margin:auto;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:60px;
+    align-items:center;
+}
+
+.about img{
+    border-radius:28px;
+    height:520px;
+    object-fit:cover;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.12);
+}
+
+.about h3{
+    font-size:38px;
+    line-height:1.4;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#444;
+    margin-bottom:18px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    background:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat-card{
+    background:var(--white);
+
+    padding:45px 30px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+}
+
+.stat-card:hover{
+    transform:translateY(-10px);
+}
+
+.stat-card h2{
+    font-size:52px;
+    color:var(--primary);
+}
+
+.stat-card p{
+    color:var(--gray);
+    margin-top:10px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    background:#f3f3f3;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.12);
+}
+
+.card h3{
+    color:var(--primary);
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#555;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+}
+
+.gallery img{
+    height:260px;
+    object-fit:cover;
+
+    border-radius:24px;
+
+    transition:.35s;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* =========================
+   DONATE
+========================= */
+
+.donate{
+    background:
+    linear-gradient(135deg,#fff3d6,#ffe0a3);
+
+    padding:80px 40px;
+
+    border-radius:40px;
+
+    text-align:center;
+}
+
+.donate h2{
+    font-size:46px;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.donate p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:35px;
+    color:#444;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box{
+    max-width:800px;
+    margin:auto;
+
+    background:white;
+
+    padding:60px 40px;
+
+    border-radius:32px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+}
+
+.contact-box h3{
+    color:var(--primary);
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+.contact-box p{
+    color:#555;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#1f1f1f;
+    color:white;
+
+    text-align:center;
+
+    padding:28px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    nav ul{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .title h2{
+        font-size:32px;
+    }
+
+    section{
+        padding:90px 7%;
+    }
+
+    .about h3{
+        font-size:30px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+<nav>
+
+    <div class="logo">
+        🐾 流浪動物森林之家
+    </div>
+
+    <ul>
+        <li><a href="#about">首頁</a></li>
+        <li><a href="#stats">宗旨</a></li>
+        <li><a href="#services">最新消息</a></li>
+        <li><a href="#gallery">助&代養專區</a></li>
+        <li><a href="#donate">救援與後續</a></li>
+        <li><a href="#contact">聯絡我們</a></li>
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+
+    <div class="hero-content">
+
+        
+
+       
+
+       
+
+    </div>
+
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="title">
+        <h2>園區環境</h2>
+        <p>
+            我們致力於救援受傷與無家可歸的流浪動物，
+            提供醫療、照護與溫暖陪伴，幫助牠們重新找到幸福。
+        </p>
+    </div>
+
+    <div class="about">
+
+        <img src="689023202_1410234424472005_216171720413271491_n.jpg">
+        <img src="695181285_1416717397157041_7517474901254443874_n.jpg">
+         <img src="702089957_1422877916540989_4630790346450281029_n.jpg">
+
+    </div>
+
+        
+
+</section>
+
+<!-- STATS -->
+<section class="stats" id="stats">
+
+    <div class="title">
+        <h2>宗旨</h2>
+        <p>
+               宗旨：我們秉持著慈悲為懷、眾生皆平等的心念，一顆願為流浪動物付出的心，一雙願為流浪動物出力的手，看到貓狗遭主人遺棄，繁殖場利用完後，成為街頭流浪動物，受盡苦難，東躲西藏，更因破壞環境衛生而遭到收容所12天捕殺的命運，而牠們悲慘的命運卻是人類造成的！
+所以，我們成立了流浪動物森林之家來收容流浪動物，也希望能夠喚醒人們的覺醒，地球～不只是人類的，其他物種亦擁有在地球上生存的權利，請還原大自然的生存法則，從物種殺手的角色，蛻變為牠們的守護神，不要再為自己的利益來殘害牠們（造業）
+～請大家尊重生命～
+        </p>
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h2>500+</h2>
+            <p>救援毛孩</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>300+</h2>
+            <p>成功送養</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>24H</h2>
+            <p>日常照護</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>8年</h2>
+            <p>照護經驗</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+    <div class="title">
+        <h2>最新消息</h2>
+        <p>
+            提供完整的醫療與生活照護，打造安全且溫暖的庇護空間。
+        </p>
+    </div>
+
+    
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+
+    <div class="title">
+        <h2>助&代養專區</h2>
+        <p>
+            每一次陪伴，都是生命重新綻放的開始。
+        </p>
+    </div>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b">
+        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131">
+        <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803">
+        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1">
+
+    </div>
+
+</section>
+
+<!-- DONATE -->
+<section id="donate">
+    
+        <div class="title">
+        <h2>救援後續</h2>
+            <p>
+                協助受傷、棄養與高風險流浪動物進行緊急安置與醫療。
+            </p>
+            </div>
+        <div class="stats-grid">
+
+        <div class="stat-card">
+            <h2>醫療照護</h2>
+            <p>提供基礎醫療、結紮、復健與健康管理</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>中途安置</h2>
+            <p>給予安全生活空間與穩定陪伴,降低流浪風險</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>愛心送養</h2>
+            <p>協助毛孩找到願意陪伴牠一生的新家</p>
+        </div>
+
+        
+        
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <div class="title">
+        <h2>聯絡我們</h2>
+        <p>
+            歡迎合作、捐助與志工參與，一起守護更多生命。
+        </p>
+    </div>
+
+    <div class="contact-box">
+
+        <h3>流浪動物森林之家</h3>
+
+        <p>
+            台北市內湖區康樂街136巷15弄7號(辦事處)
+            <br><br>
+            LINE：@660zbsgw
+            <br><br>
+            Email：foresthome@gmail.com
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 流浪動物森林之家 All Rights Reserved.
+</footer>
+
+</body>
+</html>

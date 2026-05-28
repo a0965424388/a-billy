@@ -1,0 +1,321 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Noto Serif TC', serif;
+    background:#f8f2e8;
+    color:#333;
+    line-height:1.8;
+}
+
+/* ===== 導覽列 ===== */
+
+header{
+    background:#5b0000;
+    padding:15px 80px;
+    position:fixed;
+    width:100%;
+    z-index:999;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#f5d28c;
+    font-size:32px;
+    font-weight:900;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#fff3d4;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#f5d28c;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("https://tse3.mm.bing.net/th/id/OIP.scmCePHzrkAC_EwbiEyncQHaFO?pid=Api&P=0&h=180");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    padding:0 10%;
+    color:white;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:80px;
+    margin-bottom:20px;
+    color:#ffd27d;
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:40px;
+}
+
+.hero-btns{
+    display:flex;
+    gap:20px;
+}
+
+.btn{
+    padding:16px 35px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:18px;
+    transition:.3s;
+}
+
+.btn-red{
+    background:#6c6767;
+    color:white;
+}
+
+.btn-gold{
+    background:#d6a84f;
+    color:#4a0000;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ===== 區塊 ===== */
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:48px;
+    color:#7b0000;
+}
+
+.section-title p{
+    color:#b88a44;
+    letter-spacing:3px;
+}
+
+/* ===== 宮廟介紹 ===== */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.about-text h3{
+    font-size:36px;
+    color:#7b0000;
+    margin-bottom:20px;
+}
+
+/* ===== 主祀神明 ===== */
+
+.deities{
+    background:#7b0000;
+    color:white;
+}
+
+.deities .section-title h2{
+    color:#ffd27d;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#fff5e1;
+    color:#333;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:20px 0 10px;
+    color:#7b0000;
+}
+
+.card p{
+    padding:0 20px 30px;
+}
+
+/* ===== 服務項目 ===== */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+}
+
+.service-box{
+    background:white;
+    padding:40px 20px;
+    text-align:center;
+    border-radius:15px;
+    border:2px solid #e5c48a;
+    transition:.3s;
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+}
+
+.service-box h3{
+    color:#7b0000;
+    margin-bottom:10px;
+}
+
+/* ===== 最新消息 ===== */
+
+.news{
+    background:#7b0000;
+}
+
+.news .section-title h2{
+    color:#ffd27d;
+}
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.news-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.news-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.news-content{
+    padding:25px;
+}
+
+.news-content h3{
+    color:#7b0000;
+    margin-bottom:10px;
+}
+
+/* ===== 聯絡 ===== */
+
+.contact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+}
+
+.contact-box{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+}
+
+.contact-box h3{
+    color:#7b0000;
+    margin-bottom:20px;
+}
+
+/* ===== footer ===== */
+
+footer{
+    background:#3a0000;
+    color:#fff3d4;
+    text-align:center;
+    padding:30px;
+}
+
+/* ===== 手機版 ===== */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero h2{
+    font-size:28px;
+}
+
+.about{
+    grid-template-columns:1fr;
+}
+
+nav{
+    flex-direction:column;
+    gap:20px;
+}
+
+nav ul{
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+header{
+    padding:15px 30px;
+}
+
+}
